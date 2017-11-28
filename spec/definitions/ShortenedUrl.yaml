@@ -1,0 +1,18 @@
+type: object
+required:
+  - id
+  - shortenedUrl
+  - sourceUrl
+  - expiresAt
+properties:
+  id:
+    type: string
+  shortenedUrl:
+    type: string
+    format: uri
+  sourceUrl:
+    type: string
+    format: uri
+  expiresAt:
+    type: string
+    format: date-time

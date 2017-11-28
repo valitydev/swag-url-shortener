@@ -1,0 +1,27 @@
+post:
+  description: Создать новую короткую ссылку
+  tags:
+    - Shortener
+  operationId: shortenUrl
+  parameters:
+    - $ref: '#/parameters/requestID'
+    - name: shortenedUrlParams
+      description: Параметры для создания короткой ссылки
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          sourceUrl:
+            type: string
+            format: uri
+          expiresAt:
+            type: string
+            format: date-time
+  responses:
+    '201':
+      description: Короткая ссылка создана
+      schema:
+        $ref: '#/definitions/ShortenedUrl'
+    '400':
+      $ref: '#/responses/BadRequest'
