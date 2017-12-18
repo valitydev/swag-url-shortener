@@ -10,14 +10,7 @@ post:
       in: body
       required: true
       schema:
-        type: object
-        properties:
-          sourceUrl:
-            type: string
-            format: uri
-          expiresAt:
-            type: string
-            format: date-time
+        $ref: '#/definitions/ShortenedUrlParams'
   responses:
     '201':
       description: Короткая ссылка создана

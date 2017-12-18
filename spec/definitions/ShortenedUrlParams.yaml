@@ -1,0 +1,11 @@
+type: object
+required:
+  - sourceUrl
+  - expiresAt
+properties:
+  sourceUrl:
+    type: string
+    format: uri
+  expiresAt:
+    type: string
+    format: date-time
