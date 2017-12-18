@@ -13,6 +13,8 @@ get:
         $ref: '#/definitions/ShortenedUrl'
     '400':
       $ref: '#/responses/BadRequest'
+    '403':
+      $ref: '#/responses/Forbidden'
     '404':
       $ref: '#/responses/NotFound'
 delete:
@@ -28,5 +30,7 @@ delete:
       description: Короткая ссылка удалена
     '400':
       $ref: '#/responses/BadRequest'
+    '403':
+      $ref: '#/responses/Forbidden'
     '404':
       $ref: '#/responses/NotFound'

@@ -10,7 +10,7 @@ info:
     email: tech-support@rbkmoney.com
     url: 'https://api.rbk.money'
   description: |
-    URL shortener API 
+    URL shortener API
 schemes:
   - https
 consumes:
@@ -40,16 +40,11 @@ security:
   - bearer: []
 responses:
   NotFound:
-    description: Entity not found
-    schema:
-      type: object
-      required:
-        - message
-      properties:
-        message:
-          type: string
+    description: Объект не найден
+  Forbidden:
+    description: Операция недоступна
   BadRequest:
-    description: Illegal input for operation
+    description: Неверные данные запроса
     schema:
       type: object
       required:
@@ -76,6 +71,6 @@ parameters:
     required: true
     type: string
 tags:
-  - name: Shortener 
+  - name: Shortener
     x-displayName: Короткие ссылки
     description: Получение и работа с короткими ссылками

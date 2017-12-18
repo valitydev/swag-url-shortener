@@ -18,3 +18,5 @@ post:
         $ref: '#/definitions/ShortenedUrl'
     '400':
       $ref: '#/responses/BadRequest'
+    '403':
+      $ref: '#/responses/Forbidden'
