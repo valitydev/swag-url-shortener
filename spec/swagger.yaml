@@ -41,6 +41,8 @@ security:
 responses:
   NotFound:
     description: Объект не найден
+  Unauthorized:
+    description: Операция требует авторизации
   Forbidden:
     description: Операция недоступна
   BadRequest:
