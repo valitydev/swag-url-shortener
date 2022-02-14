@@ -53,6 +53,6 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
-          branch: release/erlang/ushort-server/v0
+          branch: release/erlang/ushort-server/master
           folder: out/erlang-server-ushort
           commit-message: Release ${{ github.repository }}@${{ github.sha }}
