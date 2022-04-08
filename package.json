@@ -8,7 +8,8 @@
     "start": "gulp serve",
     "codegen": "vality-openapi generate ./web_deploy/swagger.json"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@vality/openapi-generator-cli": "0.1.1-fbfe66e.0",
     "connect": "^3.4.1",
     "cors": "^2.7.1",
     "deploy-to-gh-pages": "^1.1.0",
