@@ -1,14 +1,8 @@
 swagger: '2.0'
-host: rbk.mn
 basePath: /v1
 info:
   version: '1.0'
-  title: RBKmoney URL shortener API
-  termsOfService: 'http://rbkmoney.com/'
-  contact:
-    name: RBKmoney support team
-    email: tech-support@rbkmoney.com
-    url: 'https://api.rbk.money'
+  title: URL shortener API
   description: |
     URL shortener API
 schemes:
@@ -27,7 +21,7 @@ securityDefinitions:
       ```shell
        Authorization: Bearer {TOKENIZATION|PRIVATE_JWT}
       ```
-      Посмотреть ваш API-ключ вы можете в [личном кабинете](https://dashboard.rbk.money/api/key). Ключи не разделяются на тестовые и боевые, ваш API ключ открывает доступ ко всем функциям платформы. Для тестовых транзакций используйте ID тестовых магазинов. Помните, что вы никому не должны передавать ваш API ключ!
+      Посмотреть ваш API-ключ вы можете в личном кабинете. Ключи не разделяются на тестовые и боевые, ваш API ключ открывает доступ ко всем функциям платформы. Для тестовых транзакций используйте ID тестовых магазинов. Помните, что вы никому не должны передавать ваш API ключ!
 security:
   - bearer: []
 responses:
