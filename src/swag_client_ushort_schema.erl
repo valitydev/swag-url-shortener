@@ -83,15 +83,8 @@ get_raw() ->
   <<"info">> => #{
     <<"description">> => <<"URL shortener API\n">>,
     <<"version">> => <<"1.0">>,
-    <<"title">> => <<"RBKmoney URL shortener API">>,
-    <<"termsOfService">> => <<"http://rbkmoney.com/">>,
-    <<"contact">> => #{
-      <<"name">> => <<"RBKmoney support team">>,
-      <<"url">> => <<"https://api.rbk.money">>,
-      <<"email">> => <<"tech-support@rbkmoney.com">>
-    }
+    <<"title">> => <<"URL shortener API">>
   },
-  <<"host">> => <<"rbk.mn">>,
   <<"basePath">> => <<"/v1">>,
   <<"tags">> => [ #{
     <<"name">> => <<"Shortener">>,
@@ -237,7 +230,7 @@ get_raw() ->
   },
   <<"securityDefinitions">> => #{
     <<"bearer">> => #{
-      <<"description">> => <<"Для аутентификации вызовов мы используем [JWT](https://jwt.io). Cоответствующий ключ передается в заголовке.\n```shell\n Authorization: Bearer {TOKENIZATION|PRIVATE_JWT}\n```\nПосмотреть ваш API-ключ вы можете в [личном кабинете](https://dashboard.rbk.money/api/key). Ключи не разделяются на тестовые и боевые, ваш API ключ открывает доступ ко всем функциям платформы. Для тестовых транзакций используйте ID тестовых магазинов. Помните, что вы никому не должны передавать ваш API ключ!\n">>,
+      <<"description">> => <<"Для аутентификации вызовов мы используем [JWT](https://jwt.io). Cоответствующий ключ передается в заголовке.\n```shell\n Authorization: Bearer {TOKENIZATION|PRIVATE_JWT}\n```\nПосмотреть ваш API-ключ вы можете в личном кабинете. Ключи не разделяются на тестовые и боевые, ваш API ключ открывает доступ ко всем функциям платформы. Для тестовых транзакций используйте ID тестовых магазинов. Помните, что вы никому не должны передавать ваш API ключ!\n">>,
       <<"type">> => <<"apiKey">>,
       <<"name">> => <<"Authorization">>,
       <<"in">> => <<"header">>

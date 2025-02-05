@@ -13,5 +13,5 @@
     ]},
     {modules, []},
     {licenses, []},
-    {links, ["https://api.rbk.money"]}
+    {links, []}
 ]}.
