@@ -3,10 +3,7 @@ on:
   push:
     branches: [master]
   pull_request:
-    branches: ['**']
-
-env:
-  NODEJS_VERSION: '16'
+    branches: ["**"]
 
 jobs:
   build:
@@ -14,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup swagger-codegen
         uses: valitydev/action-setup-swagger-codegen@v0.0.1
@@ -23,23 +20,20 @@ jobs:
           generator-version: "1.0.1"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODEJS_VERSION }}
-          cache: npm
+        uses: actions/setup-node@v4
 
       - name: Install deps
         run: npm install
 
-      - name: Bundle spec and build docsite
-        run: npm run build -- build_public
+      - name: Bundle spec
+        run: npm run build
 
       - name: Generate stubs
         run: |
           mkdir -p out
           echo "Generate ushort stubs"
-          swagger-codegen generate -l vality-erlang-client -i build_public/swagger.json -o out/erlang-client-ushort --additional-properties packageName=swag_client_ushort
-          swagger-codegen generate -l vality-erlang-server -i build_public/swagger.json -o out/erlang-server-ushort --additional-properties packageName=swag_server_ushort
+          swagger-codegen generate -l vality-erlang-client -i web_deploy/swagger.json -o out/erlang-client-ushort --additional-properties packageName=swag_client_ushort
+          swagger-codegen generate -l vality-erlang-server -i web_deploy/swagger.json -o out/erlang-server-ushort --additional-properties packageName=swag_server_ushort
 
       - name: Deploy erlang-client-ushort artifact to release branch
         if: ${{ github.event_name == 'push' }}
