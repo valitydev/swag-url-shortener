@@ -38,3 +38,7 @@ node_modules
 
 # Frontend
 /lib
+/vality-openapi
+/web_deploy
+/scripts
+openapitools.json

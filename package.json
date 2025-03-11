@@ -1,24 +1,22 @@
 {
   "name": "@vality/swag-url-shortener",
   "version": "0.1.0",
+  "license": "Apache-2.0",
   "scripts": {
-    "build": "node ./scripts/build.js",
-    "swagger": "swagger-repo",
-    "test": "swagger-repo validate",
-    "start": "gulp serve",
-    "codegen": "vality-openapi generate ./web_deploy/swagger.json"
+    "start": "redocly preview-docs",
+    "validate": "redocly lint",
+    "bundle:yaml": "npm run bundle:json -- --yaml -o ./web_deploy/swagger.yaml",
+    "bundle:json": "npx swagger-repo bundle --basedir ./spec/ -o ./web_deploy/swagger.json",
+    "build": "mkdir -p ./web_deploy && npm run bundle:yaml && npm run bundle:json",
+    "build-docs": "redocly build-docs -o web_deploy/index.html",
+    "build-web": "npm run build && npm run build-docs",
+    "build-ng-lib": "vality-openapi generate ./web_deploy/swagger.json",
+    "postinstall": "mkdir -p ./scripts && cp -a ./node_modules/@vality/redocly-utils/lib/swagger-plugins ./scripts/plugins"
   },
   "devDependencies": {
-    "@vality/openapi-generator-cli": "2.0.0",
-    "connect": "^3.4.1",
-    "cors": "^2.7.1",
-    "deploy-to-gh-pages": "^1.1.0",
-    "gulp": "^3.9.1",
-    "gulp-connect": "^4.2.0",
-    "gulp-util": "^3.0.7",
-    "portfinder": "^1.0.3",
-    "shelljs": "^0.7.0",
-    "swagger-repo": "^1.0.0",
-    "swagger-ui": "^2.1.4"
+    "@redocly/cli": "^1.33.0",
+    "@vality/openapi-generator-cli": "^3.0.2",
+    "@vality/redocly-utils": "^0.3.0",
+    "swagger-repo": "1.5.1"
   }
 }
