@@ -2,6 +2,8 @@
 apis:
   core:
     root: web_deploy/swagger.yaml
+    rules:
+      operation-summary: warn
 
 extends:
   - ./node_modules/@vality/redocly-utils/lib/config.yaml
