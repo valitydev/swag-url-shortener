@@ -17,7 +17,7 @@ jobs:
         uses: valitydev/action-setup-swagger-codegen@v0.0.1
         with:
           codegen-version: "2.4.25"
-          generator-version: "1.0.1"
+          generator-version: "1.1.0"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
